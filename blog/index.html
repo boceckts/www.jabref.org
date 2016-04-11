@@ -37,6 +37,11 @@ title: JabRef Blog
         <div class="container {{ page.style }}">
             <h1>{{ page.date | date: '%B %d, %Y' }} &ndash;  {{ page.title }}</h1>
             {{ page.content }}
+            {% if page.author == null %}
+                <p>written by anonymous</p>
+            {% else %}
+                <p>written by <a href="https://github.com/{{ page.author }}">{{ page.author }}</a></p>
+            {% endif %}
         </div>
       </div>
     {% endfor %}
